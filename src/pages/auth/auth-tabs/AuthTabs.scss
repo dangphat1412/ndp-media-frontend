@@ -1,0 +1,104 @@
+.container-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+
+  .main-logo {
+    user-select: none;
+    img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 10%;
+      margin: 0 auto;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(
+      circle at 0% 0.5%,
+      rgb(241, 241, 242) 0.1%,
+      rgb(224, 226, 228) 100.2%
+    );
+    opacity: 0.9;
+  }
+
+  &-auth {
+    width: 400px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 35vh;
+    text-align: left;
+    background: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 0.25rem;
+
+    .tabs {
+      margin: 15px;
+      max-width: 400px;
+      overflow: hidden;
+      position: relative;
+      padding: 0;
+
+      .tab-group {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .active button {
+          background: var(--green-1);
+          color: var(--white-1);
+        }
+
+        li button,
+        .forgot-password,
+        .reset-password {
+          display: block;
+          text-decoration: none;
+          border-radius: 0.25rem;
+          padding: 15px;
+          background: var(--white-1);
+          color: var(--gray-1);
+          font-size: 20px;
+          font-weight: bold;
+          float: left;
+          width: 50%;
+          border: none;
+          text-align: center;
+          cursor: pointer;
+          border-top: 3px solid transparent;
+          transition: all 0.2s ease-in-out;
+        }
+      }
+
+      .tab-item {
+        padding: 60px 0 0;
+      }
+
+      .tabs-forgot-password {
+        height: 240px;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+    }
+  }
+}
